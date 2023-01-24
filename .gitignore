@@ -6,3 +6,5 @@ csv/.DS_Store
 README.Rmd
 .Rhistory
 .RData
+*.xml
+temp_data.zip
