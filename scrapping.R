@@ -2,8 +2,6 @@ library(tidyverse)
 library(rvest)
 library(stringr)
 library(glue)
-library(httr) # for timeout option response
-library(jsonlite)
 
 ##### Chessmetrics #####
 urlbase <- "http://www.chessmetrics.com/cm/DL/DL{thispage}.htm"
