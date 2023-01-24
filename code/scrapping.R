@@ -2,6 +2,8 @@ library(tidyverse)
 library(rvest)
 library(stringr)
 library(glue)
+library(data.table)
+library(stringi)
 
 ##### Chessmetrics #####
 urlbase <- "http://www.chessmetrics.com/cm/DL/DL{thispage}.htm"
@@ -36,11 +38,11 @@ for (thispage in 2:588) {
   list_of_results[[thispage]] <- tableauranking
 }
 
-results <- data.table::rbindlist(l = list_of_results) %>%
+results <- rbindlist(l = list_of_results) %>%
   as_tibble() %>%
   group_by(dateranking) %>%
-  mutate(ranking = row_number())
+  mutate(ranking = row_number()) %>%
+  ungroup()
 
 write.csv(x = results, file = "csv/ranking_chessplayers_1851_2001.csv", row.names = FALSE)
-openxlsx::write.xlsx(x = results, file = "csv/ranking_chessplayers_1851_2001.xlsx", overwrite = TRUE)
 

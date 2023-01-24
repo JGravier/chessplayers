@@ -4,3 +4,5 @@ csv/.DS_Store
 .DS_Store
 .Rproj.user
 README.Rmd
+.Rhistory
+.RData
