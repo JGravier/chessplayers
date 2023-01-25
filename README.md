@@ -10,8 +10,8 @@ This repo aims to compile different datasets related to chess players’
 ratings and rankings over time. The data are extracted from several
 sources:
 
-1.  since 1851 to September 2001 (annual, quarterly and monthly
-    snapshots): scraping [chessmetrics old
+1.  since 1851 to September 2001 (annual, biannual, quarterly, monthly
+    and hebdo snapshots): scraping [chessmetrics old
     website](http://www.chessmetrics.com/cm/OldIndex.html) created by
     [Jeff Sonas](https://en.wikipedia.org/wiki/Jeff_Sonas). Rate
     calculation is
