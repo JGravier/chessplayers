@@ -12,23 +12,47 @@ sources:
 
 1.  since 1851 to September 2001: scraping [chessmetrics old
     website](http://www.chessmetrics.com/cm/OldIndex.html) created by
-    [Jeff Sonas](https://en.wikipedia.org/wiki/Jeff_Sonas)
+    [Jeff Sonas](https://en.wikipedia.org/wiki/Jeff_Sonas). Rate
+    calculation is
+    [chessmetrics](https://en.wikipedia.org/wiki/Chessmetrics). Output
+    is stored as .csv in [csv
+    file](https://github.com/JGravier/chessplayers/tree/main/csv).
 
 2.  since September 2001 to December 2004 (monthly): scraping
     [chessmetrics new
     website](http://www.chessmetrics.com/cm/CM2/Introduction.asp?Params=199510SSSSS3S000000000000111000000000000010100)
-    created by [Jeff Sonas](https://en.wikipedia.org/wiki/Jeff_Sonas)
+    created by [Jeff Sonas](https://en.wikipedia.org/wiki/Jeff_Sonas).
+    Rate calculation is
+    [chessmetrics](https://en.wikipedia.org/wiki/Chessmetrics). Output
+    is stored as .csv in [csv
+    file](https://github.com/JGravier/chessplayers/tree/main/csv).
 
-3.  since February 2015 to December 2022 (monthly for Standard and Blitz
+3.  since January 2001 to December 2019 (\~ monthly):
+    [fork](https://github.com/JGravier/FIDE) from [FIDE Data
+    Pull](https://github.com/anujdahiya24/FIDE) created by Anuj Dahiya
+    in 2022 and based on International Chess Federation rates (FIDE).
+    Rate calculation is [Elo rating
+    system](https://en.wikipedia.org/wiki/Elo_rating_system). File
+    output compilations of chess players’s standard ratings in .csv is
+    compiled as .parquet format
+    [compilationcsv.R](https://github.com/JGravier/FIDE/blob/main/compilationcsv.R)
+    file (output .parquet is bigger than 500Mo and not stored on git).
+
+4.  since January 2020 to December 2022 (monthly for Standard and Blitz
     rating): scrapping [FIDE download
-    list](https://ratings.fide.com/download_lists.phtml)
+    list](https://ratings.fide.com/download_lists.phtml). Rate
+    calculation is [Elo rating
+    system](https://en.wikipedia.org/wiki/Elo_rating_system). File
+    output in .parquet format (not stored on git).
 
 #### Scraping infos for 1851-2001
 
-Selection of second dataframe in page list and adding date of list.
-Example: in [December 31,
-1851](http://www.chessmetrics.com/cm/DL/DL2.htm), scraping dataframe
-from CSS selector:
+Selection of second dataframe in page list, adding date of list and
+ranking
+![r](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;r "r")
+as 1, 2, 3, …, n from rating of each specific date. Example: in
+[December 31, 1851](http://www.chessmetrics.com/cm/DL/DL2.htm), scraping
+dataframe from CSS selector:
 
     body > font:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > div:nth-child(5) > center:nth-child(1) > table:nth-child(4) > tbody:nth-child(1)
 
@@ -51,8 +75,9 @@ Output is like:
 
 #### Scraping infos for 2001-2004
 
-Selection of dataframe in page list and adding date of list. Example: in
-[January
+Selection of dataframe in page list, adding date of list and ranking
+![r](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;r "r")
+as 1, 2, 3, …, n from rating of each specific date. Example: in [January
 2001](http://www.chessmetrics.com/cm/CM2/SingleMonth.asp?Params=199510SSSSS3S000000200101111000000000000010100),
 scraping dataframe from CSS selector:
 
