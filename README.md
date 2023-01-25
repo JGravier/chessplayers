@@ -10,7 +10,8 @@ This repo aims to compile different datasets related to chess players’
 ratings and rankings over time. The data are extracted from several
 sources:
 
-1.  since 1851 to September 2001: scraping [chessmetrics old
+1.  since 1851 to September 2001 (annual, quarterly and monthly
+    snapshots): scraping [chessmetrics old
     website](http://www.chessmetrics.com/cm/OldIndex.html) created by
     [Jeff Sonas](https://en.wikipedia.org/wiki/Jeff_Sonas). Rate
     calculation is
@@ -18,7 +19,7 @@ sources:
     is stored as .csv in [csv
     file](https://github.com/JGravier/chessplayers/tree/main/csv).
 
-2.  since September 2001 to December 2004 (monthly): scraping
+2.  since September 2001 to December 2004 (monthly snapshots): scraping
     [chessmetrics new
     website](http://www.chessmetrics.com/cm/CM2/Introduction.asp?Params=199510SSSSS3S000000000000111000000000000010100)
     created by [Jeff Sonas](https://en.wikipedia.org/wiki/Jeff_Sonas).
@@ -27,8 +28,8 @@ sources:
     is stored as .csv in [csv
     file](https://github.com/JGravier/chessplayers/tree/main/csv).
 
-3.  since January 2001 to December 2019 (\~ monthly):
-    [fork](https://github.com/JGravier/FIDE) from [FIDE Data
+3.  since January 2001 to December 2019 (quarterly and monthly
+    snapshots): [fork](https://github.com/JGravier/FIDE) from [FIDE Data
     Pull](https://github.com/anujdahiya24/FIDE) created by Anuj Dahiya
     in 2022 and based on International Chess Federation rates (FIDE).
     Rate calculation is [Elo rating
@@ -52,18 +53,18 @@ dataframe from CSS selector:
 Output is like:
 
     ## # A tibble: 241,118 × 5
-    ##    Player                Rating   Age dateranking       ranking
-    ##    <chr>                  <int> <dbl> <chr>               <int>
-    ##  1 Staunton, Howard        2768  42.0 December 31, 1851       1
-    ##  2 Kieseritzky, Lionel A   2701  46.0 December 31, 1851       2
-    ##  3 Anderssen, Adolf        2653  33.5 December 31, 1851       3
-    ##  4 Horwitz, Bernhard       2593  44.6 December 31, 1851       4
-    ##  5 Williams, Elijah        2550  42.1 December 31, 1851       5
-    ##  6 von Jaenisch, Carl F    2525  38.4 December 31, 1851       6
-    ##  7 Szén, Jósef             2512  46.5 December 31, 1851       7
-    ##  8 Bird, Henry E           2495  21.5 December 31, 1851       8
-    ##  9 von der Lasa, Tassilo   2477  33.2 December 31, 1851       9
-    ## 10 Löwenthal, Johann J     2473  41.4 December 31, 1851      10
+    ##    Player             Rating   Age dateranking    ranking
+    ##    <chr>               <int> <dbl> <chr>            <int>
+    ##  1 Kasparov, Garry K    2884  37.0 April 10, 2000       1
+    ##  2 Anand, Viswanathan   2796  30.3 April 10, 2000       2
+    ##  3 Kramnik, Vladimir    2793  24.8 April 10, 2000       3
+    ##  4 Shirov, Alexei       2778  27.8 April 10, 2000       4
+    ##  5 Leko, Peter          2765  20.6 April 10, 2000       5
+    ##  6 Topalov, Veselin     2746  25.1 April 10, 2000       6
+    ##  7 Ivanchuk, Vassily    2738  31.1 April 10, 2000       7
+    ##  8 Adams, Michael       2736  28.4 April 10, 2000       8
+    ##  9 Gelfand, Boris       2731  31.8 April 10, 2000       9
+    ## 10 Kamsky, Gata         2716  25.9 April 10, 2000      10
     ## # … with 241,108 more rows
 
 #### Scraping infos for 2001-2004
@@ -78,17 +79,17 @@ scraping dataframe from CSS selector:
 
 Output is like:
 
-    ## # A tibble: 4,800 × 5
-    ##    Player               Rating Age    dateranking ranking
-    ##    <chr>                 <int> <chr>        <int>   <int>
-    ##  1 Garry Kasparov         2850 37y9m       200101       1
-    ##  2 Viswanathan Anand      2820 31y1m       200101       2
-    ##  3 Vladimir Kramnik       2815 25y7m       200101       3
-    ##  4 Peter Leko             2768 21y4m       200101       4
-    ##  5 Alexander Morozevich   2757 23y6m       200101       5
-    ##  6 Alexei Shirov          2750 28y6m       200101       6
-    ##  7 Vassily Ivanchuk       2749 31y10m      200101       7
-    ##  8 Michael Adams          2743 29y2m       200101       8
-    ##  9 Evgeny Bareev          2739 34y2m       200101       9
-    ## 10 Boris Gelfand          2738 32y7m       200101      10
-    ## # … with 4,790 more rows
+    ## # A tibble: 241,118 × 5
+    ##    Player             Rating   Age dateranking    ranking
+    ##    <chr>               <int> <dbl> <chr>            <int>
+    ##  1 Kasparov, Garry K    2884  37.0 April 10, 2000       1
+    ##  2 Anand, Viswanathan   2796  30.3 April 10, 2000       2
+    ##  3 Kramnik, Vladimir    2793  24.8 April 10, 2000       3
+    ##  4 Shirov, Alexei       2778  27.8 April 10, 2000       4
+    ##  5 Leko, Peter          2765  20.6 April 10, 2000       5
+    ##  6 Topalov, Veselin     2746  25.1 April 10, 2000       6
+    ##  7 Ivanchuk, Vassily    2738  31.1 April 10, 2000       7
+    ##  8 Adams, Michael       2736  28.4 April 10, 2000       8
+    ##  9 Gelfand, Boris       2731  31.8 April 10, 2000       9
+    ## 10 Kamsky, Gata         2716  25.9 April 10, 2000      10
+    ## # … with 241,108 more rows

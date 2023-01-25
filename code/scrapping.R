@@ -47,7 +47,8 @@ for (thispage in 2:588) {
 results <- rbindlist(l = list_of_results) %>%
   as_tibble() %>%
   group_by(dateranking) %>%
-  mutate(ranking = row_number()) %>% # order of row in website is ordering by rates (descending), so row number <=> ranking
+  arrange(desc(Rating), .by_group = TRUE) %>%
+  mutate(ranking = rank(x = desc(Rating), ties.method = "min")) %>%
   ungroup()
 
 # output
@@ -94,7 +95,8 @@ for (i in 1:length(thisurl)) {
 results <- rbindlist(l = list_of_results) %>%
   as_tibble() %>%
   group_by(dateranking) %>%
-  mutate(ranking = row_number()) %>%
+  arrange(desc(Rating), .by_group = TRUE) %>%
+  mutate(ranking = rank(x = desc(Rating), ties.method = "min")) %>%
   ungroup()
 
 write.csv(x = results, file = "csv/ranking_chessplayers_2001_2004.csv", row.names = FALSE)
