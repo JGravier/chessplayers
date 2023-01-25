@@ -79,17 +79,17 @@ scraping dataframe from CSS selector:
 
 Output is like:
 
-    ## # A tibble: 241,118 × 5
-    ##    Player             Rating   Age dateranking    ranking
-    ##    <chr>               <int> <dbl> <chr>            <int>
-    ##  1 Kasparov, Garry K    2884  37.0 April 10, 2000       1
-    ##  2 Anand, Viswanathan   2796  30.3 April 10, 2000       2
-    ##  3 Kramnik, Vladimir    2793  24.8 April 10, 2000       3
-    ##  4 Shirov, Alexei       2778  27.8 April 10, 2000       4
-    ##  5 Leko, Peter          2765  20.6 April 10, 2000       5
-    ##  6 Topalov, Veselin     2746  25.1 April 10, 2000       6
-    ##  7 Ivanchuk, Vassily    2738  31.1 April 10, 2000       7
-    ##  8 Adams, Michael       2736  28.4 April 10, 2000       8
-    ##  9 Gelfand, Boris       2731  31.8 April 10, 2000       9
-    ## 10 Kamsky, Gata         2716  25.9 April 10, 2000      10
-    ## # … with 241,108 more rows
+    ## # A tibble: 4,800 × 5
+    ##    Player               Rating Age    dateranking ranking
+    ##    <chr>                 <int> <chr>        <int>   <int>
+    ##  1 Garry Kasparov         2850 37y9m       200101       1
+    ##  2 Viswanathan Anand      2820 31y1m       200101       2
+    ##  3 Vladimir Kramnik       2815 25y7m       200101       3
+    ##  4 Peter Leko             2768 21y4m       200101       4
+    ##  5 Alexander Morozevich   2757 23y6m       200101       5
+    ##  6 Alexei Shirov          2750 28y6m       200101       6
+    ##  7 Vassily Ivanchuk       2749 31y10m      200101       7
+    ##  8 Michael Adams          2743 29y2m       200101       8
+    ##  9 Evgeny Bareev          2739 34y2m       200101       9
+    ## 10 Boris Gelfand          2738 32y7m       200101      10
+    ## # … with 4,790 more rows
