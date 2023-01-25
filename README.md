@@ -38,13 +38,6 @@ sources:
     [compilationcsv.R](https://github.com/JGravier/FIDE/blob/main/compilationcsv.R)
     file (output .parquet is bigger than 500Mo and not stored on git).
 
-4.  since January 2020 to December 2022 (monthly for Standard and Blitz
-    rating): scrapping [FIDE download
-    list](https://ratings.fide.com/download_lists.phtml). Rate
-    calculation is [Elo rating
-    system](https://en.wikipedia.org/wiki/Elo_rating_system). File
-    output in .parquet format (not stored on git).
-
 #### Scraping infos for 1851-2001
 
 Selection of second dataframe in page list, adding date of list and
